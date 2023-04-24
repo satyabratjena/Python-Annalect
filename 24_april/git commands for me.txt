@@ -1,0 +1,60 @@
+git------   it saves all the changes(do not change in the main file)
+
+distributed version control (sabke pass ek ek copy rehti hai repository ki)
+
+gitbash--- (ek terminal hai like powershell for window)
+
+- it runs as unix command (as commands we will use in linux)
+
+
+-- on git status-- *there are few things need to know*
+
+__ untracked __
+- means with the help of git you are not tracking the file 
+- git has no link with the file
+
+__ unmodified __
+- git has already recorded your file
+- here commit was done
+
+__ Staged __
+- to track files which i want to commit
+
+__ modified __
+- you have edited after commit. 
+- after editing you can commit the change. 
+
+______________________________________
+- git commit -m "Added more htmls" -
+_______________________________________
+this will add the comment and commit the file
+
+to clear all the commands -- clear --
+
+- git status
+
+- git checkout ----> this will update file as last commit
+----> if somebody has editted something to your file and you can't being able undo it on vscode terminal. then checkout will undo and match it with last commit.
+
+- git checkout -f 
+---> it will match files to last commited.
+
+- git log
+--> tell you what all things you commit and the message
+
+--> if you want to filter all out from 1000 commit. to see last 5 commits
+- git log -p -1/2/3
+
+_______________________________________
+___________________________________________
+
+-git diff
+--> it will compare the updated file with working tree and stage area
+
+- git diff -- staged 
+--> it will compare to the last file updated in staging area
+
+- git checkout -f
+--> to match the file as last edited. and undo the recent edited in the vscode application 
+
+- git commit -a -m "skipped staging area and fixed <"
