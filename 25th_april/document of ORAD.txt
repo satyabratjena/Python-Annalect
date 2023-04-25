@@ -1,0 +1,90 @@
+API (messenger)
+
+- API documentation should provide developers with all the information they need to understand how to use the API, 
+- what endpoints are available,
+- how to format requests and responses.
+- can easily integrate the API into their applications and minimize the time required to understand how to use it.
+
+- need to call from flask project 
+
+- do the GET,PUT,POST using POSTMAN
+
+
+overview on ORAD (product) Omnicom Research and Development
+
+-------------------------------------
+-------------------------------------
+sitename- devomni.annalect.com
+-------------------------------------
+-------------------------------------
+
+Dashboard - which ever brand is going to subscribe this. those brand dashboard are going to present in the front page section
+
+--> supporting(leavereging) PowerBI dashboard on the home page that was linked to it.
+
+--> ADMIN part
+1. subscription details
+2. Report type details
+
+1. Subscription:
+--> we try to manage whoever has asked for their subscription
+
+here client ask for **layout subscription**
+
+*-* Layout Subscription *-*
+
+dashboard/social intelligence/ facebook geolift(is a kind of subscription)
+
+--> after getting the details from admin of the subscription details. Admin will come and make the SUBSCRIPTION STATUS as Pending/Subscribed/Unsubscribed
+
+--> PENDING -> whenever the request is going to come as a new request, it will be Pending by-default. Once admin will put the status and subscribed.
+
+-> it will show on the dashboard page for the layout. 
+
+**************************************************
+Layout means-- Omni Demo US and dropdown menu (there will be many layout)
+**************************************************
+
+--> layout settings -> will show the create client. You have all the list of the clients there
+
+***************
+Raise a subscription 
+***************
+
+on Reports 
+--> reporting subscription
+--> custom notification (get a custom email confirmation)
+
+-> rollout a new layout or plan
+
+client distribution:- 
+means what client layout you are going to use
+-> which you are going to enable report type.
+
+--> once create it, it will come to new layout where you have to send a subscription
+
+--> ONCE this thing create it will show in dashboard for client.
+
+**************
+ BACKEND
+**************
+
+- FLASK
+- A LOT OF APIS
+
+API 
+(devomni/dashboard/inspect page/network/preview)
+--> If we are going to use REST API 
+---> the result should come in json
+- see the header and preview section, payload
+
+--> understand which cookies has been pass here
+
+************
+after setup venv you can run though
+terminal/run.sh
+Run it
+
+go to google/125.0.0.5/login(devomni)
+- if no data is showing then you db is not in sync with the project
+************
