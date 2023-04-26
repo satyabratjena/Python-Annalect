@@ -1,1 +1,11 @@
-iejfoi m
+1. Gone through the List of How to's (Confluence ORAD Workspace)
+
+1.1. How do we log in to omni portal
+- different tyoe of logins
+- selection of client ( in dev.omni site)
+- report creating in report Builder
+- edit, clone and delete the report from user site
+- report type creation
+- CSV format (report downloading)
+
+2. Gone through the auth.py file and commented there whatever i have understood till now
