@@ -1,0 +1,27 @@
+******************************
+review of views.py
+******************************
+
+- by getting client ID from the query --> request.args.get()
+- if client ID not found in the URL, then it tries to get it from session --> session.get()
+
+- the def login_form():
+the function retrives two configuration parameteres from the Flask app config ---> app.config.get()
+
+-- Lastly, the function renders a Jinja2 template using --> login.html
+
+
+**********************
+git commands
+**********************
+
+-git diff
+--> it will compare the updated file with working tree and stage area
+
+- git diff -- staged 
+--> it will compare to the last file updated in staging area
+
+- git checkout -f
+--> to match the file as last edited. and undo the recent edited in the vscode application 
+
+- git commit -a -m "skipped staging area and fixed <"
