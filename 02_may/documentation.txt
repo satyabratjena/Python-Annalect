@@ -1,0 +1,158 @@
+# Logging (Logging api)
+
+- means of tracking events 
+- that happen when some software runs.
+
+
+-This is a module define functions and classes 
+- which implement a flexible event logging system for application and libraries.
+
+JSONEncoder
+___________________
+
+- this is to enable serialization of certain python objects that are not directly by using default json module.
+
+-- The default method is an override of the JSONEncoder's default method. When the JSONEncoder is encoding an object that it doesn't know how to encode, it will call the default method with the object as a parameter, and the method is expected to return a serializable representation of the object.
+
+- This custom encoder can be used to encode Python objects into JSON strings that include date and time information in a standardized format that can be easily decoded by other systems.
+
+_____________________________________
+
+To extend this to recognize other objects, subclass and implement a default() method with another method that returns a serializable object for o if possible, otherwise it should call the superclass implementation (to raise TypeError).
+
+If "skipkeys" is false (the default), a TypeError will be raised when trying to encode keys that are not str, int, float or None. If skipkeys is true, such items are simply skipped.
+
+If "ensure_ascii" is true (the default), the output is guaranteed to have all incoming non-ASCII characters escaped. If ensure_ascii is false, these characters will be output as-is.
+
+If "check_circular" is true (the default), then lists, dicts, and custom encoded objects will be checked for circular references during encoding to prevent an infinite recursion (which would cause a RecursionError). Otherwise, no such check takes place.
+
+If "allow_nan" is true (the default), then NaN, Infinity, and -Infinity will be encoded as such. This behavior is not JSON specification compliant, but is consistent with most JavaScript based encoders and decoders. Otherwise, it will be a ValueError to encode such floats.
+
+If "sort_keys" is true (default: False), then the output of dictionaries will be sorted by key; this is useful for regression tests to ensure that JSON serializations can be compared on a day-to-day basis.
+_______________________________________
+
+****************************************************************************
+app = Flask(__name__, static_folder="static/build", static_url_path="/")
+****************************************************************************
+
+static_folder="static/build"   ----> is used to specify the location of the static files for the application.
+
+static_url_path="/" --> is used to specify the URL path that will be used to access the static files.
+
+
+** Overall, this code initializes a Flask web application object with the name "__name__", and sets the static file location to "static/build" and the static URL path to "/" **
+
+**********************
+API token
+***********************
+
+- when client sends the api key on each request --> when the server recieve the request it looks up the api key in db  --> the api key identifies which user is making the request
+
+-- API authentication, we are using the values of the API key to look up the user record in the database for every single request
+
+---> when logging into site, it sees the user credential, if its right then server response with an access token(encoded string that contains the user's data --> api decode the token and retrieves the authenticated user's details --> if token is valid then api sends back a successful reponse ---> this way we are not checking database against every request.
+
+--> the API tokens can be used without database validation
+
+
+
+
+************************
+jwt token (Json Web tokens)
+************************
+jwt --> used for authorization , not authentication
+
+Authorization means making sure that the user sends request to your server is the same user that logged in during authentication process
+
+- done by using "session" --> session ID that send down in the cookies of the browser.
+For e.g., every time the client make your request --> they send that session ID up to the server and the server checks its memory --> server finds that user and does its authorization --> to make sure user has access
+
+--> BUT jwt instead of actually using the cookies, it uses a JSON web token. it passes a SECRET KEY 
+
+-- in jwt, the user information got stored in actual token which means it stored in the client and the server doesn't have to remember aything.
+
+--> this jwt help to use it across multiple servers that you run.
+
+******************
+https://jwt.io/
+******************
+
+--> eg. in oktaWP, we sign in to the oktaWP, But didn't require to sign in to condeco and darwin separetly. it will redirect to the accessable site as we already signed in to okta.
+
+-- the session is stored in oktaWP and darwin server.
+
+_____________________________________________________________________
+_____________________________________________________________________
+
+SSO -single sign or
+
+#wsgi (WEB SERVER GATEWAY INTERFACE)
+
+** gunicorn  **
+
+- standard interface between web server software and PYTHON web applications
+- having a standard interface make it wasy to use an  application that supports WSGI with a number of different web servers.
+
+- When client comes --> make a http request to server --> take that request and make that object to a python object (for e.g., Json) called by the framework 
+
+- WSGI standards exists so that you can --> compare any wsgi server --> with any wsgi framework (flask with unicorn)
+
+
+HOW?
+- when we cast a request, the request will convert into python objects. 
+- Client http request 
+
+#JSONEncoder
+- json exposese an API familiar to user of standard library marshal modules
+
+- 
+
+TYPES of authenitication
+
+- auth authentication
+- 
+- 
+
+# Logging (Logging api)
+
+- means of tracking events 
+- that happen when some software runs.
+
+- dev adds logging calls to their code to indicate that certain events have occured.
+
+-This is a module define functions and classes 
+- which implement a flexible event logging system for application and libraries.
+
+## Benefit of having the logging API:
+-
+
+# Types of logging
+_____________________
+*********************
+- these are logging levels
+
+DEBUG --> detailed information, when diagnosing problems
+
+INFO --> confirmation that things are working as expected.
+
+WARNING --> An indication that something unexpected happened, or indicative of some problem in the near future 
+
+ERROR --> Due to more serious problem, the software has not been able to perform some function.
+
+CRITICAL --> serious error, indicating that the program itself may be unable to continue running
+
+____________________________________________
+*******************************************
+
+____________________________________________
+*********************************************
+import logging
+
+logging.debug('This is a debug message')
+logging.info('This is an info message')
+logging.warning('This is a warning message')
+logging.error('This is an error message')
+logging.critical('This is a critical message')
+
+_______________________________________________
+***********************************************
