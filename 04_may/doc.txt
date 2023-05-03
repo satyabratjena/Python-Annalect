@@ -1,0 +1,44 @@
+session data
+__________________
+
+unlike cookies, session data is stored on the server
+- session is the interval at which the client logs on the sever and client.
+
+___________________________
+UPSERT COMMAND:: (client.py)
+
+upserting data into a table, update records that already exist and insert new ones. (updating the data)
+
+
+___________________________
+
+*************
+views.py
+*************
+the @auth_required() and @client_required() decorators are custom decorators implimented in the auth.py file to ensure the user has been authenticated and authorize to use the account
+
+@app.errorhandler(404)
+
+-- > this custom error handler will come whenever we have an error. it will reflect as 404 error(i.e., page not found)
+
+::: line 43 ::::
+--> Get the current client first from query params (in url) and second from session. And return to the url given after login
+
+::: line 57 :::
+---> we are using POST http method to add the user details for login. 
+ - exporting the values of login details in json payload using the request.json 
+- the sucess key has value of true, the function will return the resp dictionary with a 200 HTTP status code.
+
+
+
+****************
+dashboard.py
+***************
+
+-  API retrieves the requested dashboards!!
+
+-- It gets all static and embeded single dashboards and/or multiple dashboards.
+-- If auth_type is session then it will return all dashboards from current client.
+-- It auth_type is token then returns all dashbords from all clients.
+
+---- the returns will be in dict format as in the end we are converting to json format
