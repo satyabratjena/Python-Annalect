@@ -1,0 +1,49 @@
+   04th May :::: Documentation
+_________________________________
+
+upsert
+********
+
+-- SQL statement that supports Both Inserts and updates
+-- Leverages a Table's Unique coloum to determine whether to apply insert or update
+
+*************
+- PostgreSQL
+*************
+
+--> USING POSTGREsql Upsert in python
+
+Database table maintainance
+
+--- master table ---- transaction table (*insert*update*delete) ----
+
+
+*********************************
+   -- Read about pagination -- 
+*********************************
+
+
+ROWS_PER_PAGE = 5
+@app.route('/colors')
+@login_required
+def colors():
+    # Set the pagination configuration
+    page = request.args.get('page', 1, type=int)
+
+    colors = Color.query.paginate(page=page, per_page=ROWS_PER_PAGE)
+    return render_template('colors/all_colors.html', colors=colors)
+
+*******************
+
+*******************
+
+issue:
+ issue npm install
+
+
+
+********************
+working with Api in postman
+********************
+
+-going through files(auth,dashboard,reports,utils)
