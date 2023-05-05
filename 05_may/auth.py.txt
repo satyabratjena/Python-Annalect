@@ -1,0 +1,35 @@
+auth.py
+
+testing if we already have a session cookie for the user
+
+Task: 
+
+- go through the files(throughly)
+- do api run on postman
+- write the notes on the explanation.
+
+***************************************
+
+The decorator dataclass called authinfo.
+- to process defining a  class and initializing its attribute providing __init__, __repr__
+
+Authinfo class has 5 attributes defines as class variables
+
+__post_init__ is called called automatically after the object is initialized.
+post init method calls the get_profile method to retrieve the user profile information suing SSO(Single sign on) api.
+
+if get_profile method returns true, that indicate the user profile information was successfully retrived, then process_prifle method is called which contains the user's profile information in JSON format, which is obtained from an SSO api
+
+- the method loops through the projects attribute of user profile and checks if the type_key match the value of SSO_PROJ_NAME. this shows if the user has access to correct project.
+
+if type_key not match, it comes to next project
+****************************************
+
+ subscriptions: 
+
+@auth_required ::: 
+
+decorators can be used for multiple reasons. to extend what we have right now.(using it multiple files)
+
+if i want to made a change to the main function, for this i will create a decorator  and extend it in my fuction.
+-- and i can re-use the decorator anywhere.

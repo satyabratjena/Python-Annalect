@@ -1,0 +1,27 @@
+**************
+init.py
+***************
+dashboard_api = Blueprint("dashboard_api", __name__, url_prefix="/api/v1/dashboards")
+
+It creates a blueprint objecct name blueprint_api, by using Flask Blueprint.
+
+---> blueprint express the essential features or functionality.
+
+
+e.g., create a blueprint object in one file
+-- add views to the file using the route decorators.
+
+-- To use Flask Blueprint, import it and then resister.
+
+Custom JSONEncoder
+
+-- the python objects that are not serializable convert into Json Compatible objects, by specific rules.
+
+app = Flask(__name__, static_folder="static/build", static_url_path="/")
+
+- Here, flask is a constructor, i.e., name of the appication module. this is useful for serving static files in flask application.
+
+ __name__ attribute refers to name of current python module.
+
+static/build --> the folder where static files are store. (static files means which do not change in the application.)
+
