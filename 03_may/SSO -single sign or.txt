@@ -1,0 +1,95 @@
+SSO -single sign or
+
+#wsgi (WEB SERVER GATEWAY INTERFACE)
+
+** gunicorn  **
+
+- standard interface between web server software and PYTHON web applications
+- having a standard interface make it wasy to use an  application that supports WSGI with a number of different web servers.
+
+- When client comes --> make a http request to server --> take that request and make that object to a python object (for e.g., Json) called by the framework 
+
+- WSGI standards exists so that you can --> compare any wsgi server --> with any wsgi framework (flask with unicorn)
+
+
+HOW?
+- when we cast a request, the request will convert into python objects. 
+- Client http request 
+
+#JSONEncoder
+- json exposese an API familiar to user of standard library marshal modules
+
+- 
+
+TYPES of authenitication
+
+- auth authentication
+- 
+- 
+
+# Logging (Logging api)
+
+- means of tracking events 
+- that happen when some software runs.
+
+- dev adds logging calls to their code to indicate that certain events have occured.
+
+-This is a module define functions and classes 
+- which implement a flexible event logging system for application and libraries.
+
+## Benefit of having the logging API:
+-
+
+# Types of logging
+_____________________
+*********************
+- these are logging levels
+
+DEBUG --> detailed information, when diagnosing problems
+
+INFO --> confirmation that things are working as expected.
+
+WARNING --> An indication that something unexpected happened, or indicative of some problem in the near future 
+
+ERROR --> Due to more serious problem, the software has not been able to perform some function.
+
+CRITICAL --> serious error, indicating that the program itself may be unable to continue running
+
+____________________________________________
+*******************************************
+
+____________________________________________
+*********************************************
+import logging
+
+logging.debug('This is a debug message')
+logging.info('This is an info message')
+logging.warning('This is a warning message')
+logging.error('This is an error message')
+logging.critical('This is a critical message')
+
+_______________________________________________
+***********************************************
+
+JSONEncoder
+
+FLASK config
+
+Revise the git commands 
+
+
+FOR TODAY
+- SOME UBUNTU LINUX COMMAND
+- JSON Encodes
+- how many types of authentication
+
+Psql and PGAdmin
+****************
+- psql is a command line tool that coems with PostgesSQL
+- allow user to interacr with database through a command line interface
+- used for task such as creating and managing database objects, running queries, and performing 
+
+* Test the apis (bhaskar told that)
+
+
+** logging basics **
