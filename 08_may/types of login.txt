@@ -1,0 +1,63 @@
+we are using 3 types of login:-
+
+1. form submission:
+on the submission of login page, the username,p.w. will be given by user. it will create and unique clientID.
+2. ANsid param : 
+3. Api-Token(annalect)
+
+
+in line-190, the auth_check() function tries three possible authentication styles.
+
+the function check_api_token() and store the output in info variable. if the success(a dataclass obj; boolean) is False or the error -> none. then the info variable is returned(it goes to another function which is (line 142)def check_api_token)
+
+- same way the next variable is getting called
+
+if the check_Api_token() and check_Session_from_omni() does not return a successful, then it calls the 3rd function check_annalect_Session_id()
+
+*************************************************
+***************************************************
+
+- line 142, testing if the API-token is in the header 
+-- we are creating an instance of auth_info class(giving auth_type as "token"). the function check whether "auth_secret_id" is there in the app.config and the api-token is there in the header section of HTTP request. if the conditions are true, it will import a module "pylect_infra" and get the api-token(request.headers.get) from the header section.
+-- then it check the throug try method, if the "FLASK_ENV" 	is "local", then secret key will be named "annalect". Orelse, the func. will take secret key from app.config[auth_secret_id]. 
+-- if it fails, it will create an logger exception "failed to get". and pop-up an error message.
+
+-- if the token == secret, and if it take the success as True -> this match. orelse it show an error message in authInfo.
+
+
+Checking_annalect_session_id(): (line 125)
+****************************************
+
+-- Testing this to see if we already have the session cookie for the user:-
+
+-- info instance refering to AuthInfo class. it seeing if the current time is more that expire time(session.get). then we are checking if the ANsid session cookie is there in the user session. if it is not there, then it call to "invalid_session" function. and delete the existing session and show an error message as "no session was found".
+
+-- if ANsid session cookie is there, then it see if now time is greater than expire time. it show "invalid_Session", and it shows the session was expired.
+
+-- if the session cookie is valid, then it will set the success as "True".
+
+****************************
+def invalidate_session():
+****************************
+
+session.pop("ANsid", None) --> we are passing this to get ANsid not all the details and removing everything from the session except "current_client"
+- if the ANsid will be present there in the session, its value is returned and the variable is removed from the session. if the ANsid is not there, "None" will return there.
+
+pop --> we use the pop method with two agrument.
+
+-- this applies for every session in this "invalidate_session" function.
+
+****************************
+def check_session_from_omni():
+*****************************
+
+-- the function is check if the ANsid cookie is passed as a query parameter.
+
+-- we are creating an instance of auth_info class. 
+then we are converting all the arguments(request.args.to_dict) to a dictionary format(to keep it in Immutable dict[so that we not being able to add or delete anything from that]).
+
+-- the pop function will remove user things(username, p.w.,email), will get only ANsid, clientId and omni
+
+-- the dataclass UserInfo is responsible for the validating the user's session on ANsid and clientID matches with the client database. If the session is valid, then login_success will be "True". If the session is invalid, it will through an error as "Invalid sid from omni post"
+
+- if the ANsid is present in the query parameter then, it shows as session is valid, the success =True and it redirect to current request endpoint and redirect_Args to query parameters.
