@@ -1,0 +1,2 @@
+- understood the auth.py 
+- The name and factor are there to understand debbuger in a short way.
