@@ -1,0 +1,17 @@
+task to do:
+************
+
+bulk inserting:
+* if someone is not giving any of the following information then it should automatically save the rest information 
+
+
+bulk update:
+
+cascet delete feature:
+
+In cascade we are deleting the data from the relation database.
+
+if a parent table and child table is there. the cascade="all,delete" delete the child relationship specifies that when a parent is deleteted.
+
+
+bulk isinstance() function returns "true", if 

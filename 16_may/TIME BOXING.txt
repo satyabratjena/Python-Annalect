@@ -1,0 +1,21 @@
+TIME BOXING
+**************
+
+Phase development process
+
+- requirment analysis and specification
+- Designing 
+- Coding
+- Testing
+- Maintenance
+- Operational use of software
+
+Objective of software enginnering models:
+
+-- maintainability
+-- correctness
+-- reuseability
+-- testability
+-- Reliability
+-- Portability
+-- Adaptibility

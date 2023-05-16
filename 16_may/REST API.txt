@@ -1,0 +1,65 @@
+REST API
+*******
+
+- REST APIs called over HTTPS 
+
+- allow browsers app to commumnicate with server
+
+- take into account: security, performance and ease of use for API consumers.
+
+- 
+
+
+How to design REST APIs:
+
+- Accept and response with JSON
+********************************
+
+-- set "Content - Type" in the response header to "application/json" after the request is made.
+
+[* -- The only exception is if we’re trying to send and receive files between client and server. Then we need to handle file responses and send form data from client to server. But that is a topic for another time. ]
+
+-- make sure that endpoints return json as a repsonse.
+
+- Use noun instead of verbs in the endpoint paths
+**************************************************
+
+eg. building, window, garden
+
+-- 
+
+- Use logical  nesting on endpoints
+************************************
+
+-- '/articles/:articleId/comments'
+
+- comments are the children object of the articales, assuming each article has its own comments.
+
+- Handles errors gracefully and return standard error codes
+*************************************************
+
+-- to eliminate confusion for API users when  an error occures
+
+-- handle errors and return HTTP response codes that indicate what kind of error occured.
+
+-- maintainer havbe enough info to understand the problem occured.
+
+- Allow filtering, sorting, and pagination
+*******************************************
+
+-- filtering and pagination increase performance by reducing the usage of server resources
+
+- Maintain good security practices
+***************************************
+
+-- using SSL/TLS for security is a must
+
+(SSL  and TLS to encript the datas)
+
+- Cache data to improve performance
+*************************************
+
+-- add caching to return data from the local memory cache instead of querying the database to get the data everytime
+
+- versioning
+*****************
